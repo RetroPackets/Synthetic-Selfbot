@@ -10,14 +10,18 @@ Company       : iDiceSecurity    | Discord-Server  : https://discord.gg/cgfq5F9Y
 Developer     : RetroPackets     | Discord         : 🅉🄴🅁🄾#6015                  |
 -------------------->            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+
 # HOW TO RUN THE SELFBOT ?
 -------> [python3 selfbot.py]
+
 
 # HOW TO SETUP THE SELFBOT ?
 -------> [cd INSTALL && pip install -r requirements.txt && cd ..]
 
+
 # WHERE TO ADD TOKEN ? 
 -------> [At the very bottom of the selfbot.py file]
+
 
 # HOW TO INSPECT THE CODE ?
 -------> [Use a texteditor]

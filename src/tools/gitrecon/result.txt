@@ -1,0 +1,39 @@
+
+───────────────────────────── trippy Github report ─────────────────────────────
+ [+] Username: trippy
+ [+] Name: RP
+ [+] User id: 60874332
+ [+] Avatar url: https://avatars.githubusercontent.com/u/60874332?v=4
+ [+] Location: USA
+ [+] Bio: # import this > # import sys
+ [+] Followers: 0
+ [+] Following: 0
+ [+] Created at: 2020-02-10T09:11:13Z
+ [+] Updated at: 2022-06-24T21:09:01Z
+───────────────────────────────── trippy keys ──────────────────────────────────
+ [+] Id: 53909956
+ [+] Key: ssh-ed25519 
+AAAAC3NzaC1lZDI1NTE5AAAAILB8bugUUsTdUpOr80jaw6g6JuuB9vV92Eu3/wf2sfXi
+ [+] Id: 55575312
+ [+] Key: ssh-ed25519 
+AAAAC3NzaC1lZDI1NTE5AAAAIFQ/7wzY7P68ULPhivbZV9y8jOPbVldK8prJbdc0aTif
+ [+] Id: 67829269
+ [+] Key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAAEAQDH5wm69OyN4UG0zIC1J2krXU68Rng7aa
+xUj22u7DRVcAiE0IkDz+WuPVZoOm/CHqIV+vGYScl124r3F1WoxwZ0W1/EoeVxRE/5esNVxHuqIzD2c3
+S6kgG9UwXMfhn8MYDCB/Pw8x9XPPog/MajZMQyji93Z3rEmaxXTYW1Idz/1CTK9z+Gr1Bms/VWqz06jB
+vg+Wx5+dFCiwxMjalAFvlkU+ZbfEpfDuep3ETSyFMT2v2y5DkAJ7XgC/vBvgtyGMwjC3HKjgYuTjOsf9
+xXXTctQ3UwrshcZ8tBQZgflJ2W7ZFAnIRja3k2iG1gmBF7EV5A2G7oQwxs6B/AE4JScHsaAopcuPXES7
+domZ7r4BbYudvDIgRi6myhrxeCdqqNO4/uydmDko555a9pLKypfbFjxWvoY4c+LqXRoDCp3j/dmsSxbr
+Cf7FmQDEm0ivyQaLic4PcRHJyv5DwUXMeSk7pGL5tn5wB+Bgdb6x2HW1lyTMHP8oKztXumTRq043Mw4e
+qNI2t29p61uCJDfI4a8zRAAYzwjV3YSh9kNKuNGe9FLcCpsJ075TEChDaGn86e8GIEPTteWPYHA8azay
+dsoknBcrR5+Wb9J2afW9iFmmdOzOGuQz+Eq61xFz+XH3TImYkOZajUiA5fmDDsWHxYQD/SpZ1n60PlrD
+1vOKO963rZAo418+fjfnrQ0v+RwYusaElEPlZBzn4J5ypWmn6iANiAoXMtHn7mP53c3UQVdEs1wmM+TR
+dY2sMs7GinM2JcHCdrFRZRgUvNftnVWvXMvnlFu2EL5Q8vq/VFIJEl0A5bwDA6YWiyX7z9qVw2Zx+JCm
+VZ6x9WMCscrGkOEQvkIWH+hHXZ++9qvNhwShnP6HSS/7xQ/mJldbCqdYk83gWTUXEU4xAD5ejiWwT7rO
+VOlv5Qk78qvAWJrgJ2M/fubt6fsVBGY9G5bq2XveNCbH9N+10UPILm9xr5pqG18KyKF2iiPxhYRxUL5q
+Ye0UcZCIIQ/5UDN9Uj1IgtXetKPcs1IQiTvqlwCxLnXQLgDkW5sq0S5MYnwPO2tK0ok9ScosH9o2raZK
+5P6nIVxUZfxApULC5M5f9H2tmqShMqiRfvybSy+nI6jIcfq0kwv5OzHYn/hniCQN7pHqjyb5/8VjnuYF
+YD9skuGVR5qB8QB8K4S4zeV5mmNW82GBcj97FqC21Ra9G9G+WHTuMf3qMcudoFCg4FOhE4ZeD/rtf+1K
+fqUl0XcpURLTOrq6S+0J+VCIWdJ4xY94PUA1UlqLzUSqmELiFDLNwNubk36xPaxzF9qKJWzNBN2lPMN3
+e5p8YAIVTL7dphF9oDnhi6XfBzt3PDShj4PbcVAd6++JbetWxm2Ke9
+────────────────────────────────────────────────────────────────────────────────

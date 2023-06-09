@@ -1,10 +1,7 @@
 import sys
 
-colors = True
 machine = sys.platform # Detecting the os
-if machine.lower().startswith(("os", "win", "darwin","ios")): 
-    colors = False # Colors will not be displayed
-
+colors = not machine.lower().startswith(("os", "win", "darwin","ios"))
 if not colors:
 	reset = red = white = green = ""
 

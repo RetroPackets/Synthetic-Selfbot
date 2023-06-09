@@ -88,8 +88,7 @@ api = "http://ip-api.com/json/" # API used
 
 def json1(arg):
     response = requests.get(api + arg)
-    json_data = json.loads(response.text)
-    return(json_data)
+    return json.loads(response.text)
 
 #status = cycle(
 #    [f"Monitoring {str(bot.guilds)} Servers"])
@@ -122,17 +121,16 @@ def GmailBomber():
     try:
         _smpt.login(username, password)
     except:
-        print(f"{Fore.RED}[ERROR]: {Fore.YELLOW} Incorrect Password or gmail, make sure you've enabled less-secure apps access"+Fore.RESET)
+        print(
+            f"{Fore.RED}[ERROR]: {Fore.YELLOW} Incorrect Password or gmail, make sure you've enabled less-secure apps access{Fore.RESET}"
+        )
     target = input('Target Gmail: ')
     message = input('Message to send: ')
     counter = eval(input('Ammount of times: '))
     count = 0
     while count < counter:
-        count = 0
         _smpt.sendmail(username, target, message)
-        count += 1
-    if count == counter:
-        pass
+        count = 0 + 1
 
 
 
@@ -225,29 +223,28 @@ async def spamcrash(ctx):
 
 @bot.command(aliases=["Qnuke", "cower", "qnuke"])
 async def quicknuke(ctx):
-  await ctx.guild.edit(name='Crashed by Synthetic Selfbot')
-  for channel in ctx.guild.channels:
-    await channel.delete()
-  ban = 0
-  for member in ctx.guild.member:
-    try:
-      ban += 1
-      await member.ban()
-    except:
-      continue
-  roles = ctx.guild.roles
-  roles.pop(0)
-  for role in roles:
-    if ctx.guild.me.roles[-1] > role:
-      await role.delete()
-    else:
-      break
-  for emoji in list(ctx.guild.emojis):
-    try:
-      await emoji.delete()
-    except:
-      pass
-      await ctx.guild.create_text_channel(name = "iDiceSecurity Was Here")
+    await ctx.guild.edit(name='Crashed by Synthetic Selfbot')
+    for channel in ctx.guild.channels:
+      await channel.delete()
+    ban = 0
+    for member in ctx.guild.member:
+      try:
+        ban += 1
+        await member.ban()
+      except:
+        continue
+    roles = ctx.guild.roles
+    roles.pop(0)
+    for role in roles:
+      if ctx.guild.me.roles[-1] > role:
+        await role.delete()
+      else:
+        break
+    for emoji in list(ctx.guild.emojis):
+        try:
+            await emoji.delete()
+        except:
+            await ctx.guild.create_text_channel(name = "iDiceSecurity Was Here")
 
 
 @bot.command()
@@ -267,12 +264,12 @@ async def renamechannels(ctx, *, name):
 
 @bot.command()
 async def nickall(ctx, *, name="iDiceSecurity Runs My Life"):
-  print(cyan +"Nickname Changer Request...")
-  for member in ctx.guild.members:
-    try:
-      await member.edit(nick=name)
-    except:
-      pass 
+    print(f"{cyan}Nickname Changer Request...")
+    for member in ctx.guild.members:
+      try:
+        await member.edit(nick=name)
+      except:
+        pass 
 
 
 
@@ -285,10 +282,7 @@ async def masskick(ctx):
             print("\n\033[94mMASSKICK SUCCESS!!! \033[91m \n")
 
         except:
-            print("\nMASSKICK FAILED!!! \033[91m \n")
-
-
-            pass 
+            print("\nMASSKICK FAILED!!! \033[91m \n") 
 
 
 
@@ -360,7 +354,7 @@ async def uptime(ctx):
     difference = int(round(current_time - start_time))
     text = str(datetime.timedelta(seconds=difference))
 
-    await ctx.send("```Current Uptime: ```" + text)
+    await ctx.send(f"```Current Uptime: ```{text}")
 
 
 @bot.command()
@@ -377,11 +371,13 @@ async def kick(ctx, member: discord.Member, *, reason=None):
 async def ban(ctx, member: discord.Member, *, reason=None):
     try:
         await member.ban(reason=reason)
-        await ctx.send("**`" + str(member) + "` Was Banned From `" + str(
-            ctx.guild.name) + "` by `" + ctx.author.mention + "` with reason: `" + str(reason) + "` succesfully!**")
+        await ctx.send(
+            f"**`{str(member)}` Was Banned From `{str(ctx.guild.name)}` by `{ctx.author.mention}` with reason: `{str(reason)}` succesfully!**"
+        )
     except:
-        await ctx.send("**Failed To Ban User `" + str(member) + "` from `" + str(
-            ctx.guild.name) + "` " + ctx.author.mention + "`**")
+        await ctx.send(
+            f"**Failed To Ban User `{str(member)}` from `{str(ctx.guild.name)}` {ctx.author.mention}`**"
+        )
         await ctx.message.delete()
 
 
@@ -394,8 +390,6 @@ async def purge(ctx, amount: int):
         try:
             await message.delete()
         except:
-            pass
-            
             await ctx.send('¤☆✭ᴘᴜʀɢᴇ ᴡᴀꜱ ꜱᴜᴄᴄᴇꜱꜱꜰᴜʟ✭☆¤')
 
 
@@ -406,7 +400,9 @@ async def unlock(ctx):
 @bot.command(aliases=["WARN"])
 @commands.has_permissions(view_audit_log=True)
 async def warn(ctx, member: discord.Member, *, reason=None):
-    await ctx.send(f"``` {ctx.author} warned {member} for the following reason: ```" + reason)
+    await ctx.send(
+        f"``` {ctx.author} warned {member} for the following reason: ```{reason}"
+    )
     await ctx.message.delete()
 
 
@@ -445,13 +441,11 @@ async def invite(ctx):
 @bot.command(aliases=['PING', 'PINGWEB'])
 async def pingweb(ctx, website=None):
     await ctx.message.delete()
-    if website is None:
-        pass
-    else:
+    if website is not None:
         try:
             r = requests.get(website).status_code
         except Exception as e:
-            print(f"{Fore.RED}[ERROR]: {Fore.YELLOW}{e}" + Fore.RESET)
+            print(f"{Fore.RED}[ERROR]: {Fore.YELLOW}{e}{Fore.RESET}")
         if r == 404:
             await ctx.send(f'Website is down ({r})', delete_after=60)
         else:
@@ -526,13 +520,16 @@ async def selfinfo(ctx, member: discord.Member = None):
     if not member:
         member = ctx.message.author
 
-    roles = [role for role in member.roles]
+    roles = list(member.roles)
     await ctx.send(f"""```User Info - {member}```
 ***Status -*** ```{member.status}```
 ***User ID -*** ```{member.id}```
 ***Username -*** ```{member.display_name}```
 ***Account Created -*** """ + member.created_at.strftime("```%a, %#d %B %Y, %I:%M %p``` ***UTC***"))
-    await ctx.send(f"""***Joined Server -*** """ + member.joined_at.strftime("```%a, %#d %B %Y, %I:%M %p``` ***UTC***"))
+    await ctx.send(
+        """***Joined Server -*** """
+        + member.joined_at.strftime("```%a, %#d %B %Y, %I:%M %p``` ***UTC***")
+    )
     perm_string = ', '.join([str(p[0]).replace("_", " ").title() for p in member.guild_permissions if p[1]])
     await ctx.send(f"""***Guild Permissions -*** ```{perm_string}```""")
 
@@ -661,9 +658,17 @@ async def hack(ctx, user: discord.User = None):
                   "Cashier", "Clerk", "Waiter", "Waitress", "Grocery Bagger", "Retailer", "Sales-Person", "Artist",
                   "Singer", "Rapper", "Trapper", "Discord Thug", "Gangster", "Discord Packer", "Mechanic", "Carpenter",
                   "Electrician", "Lawyer", "Doctor", "Programmer", "Software Engineer", "Scientist"]
-    salary = ["Retard makes no money LOL", "$" + str(random.randrange(0, 1000)), '<$50,000', '<$75,000', "$100,000",
-              "$125,000", "$150,000", "$175,000",
-              "$200,000+"]
+    salary = [
+        "Retard makes no money LOL",
+        f"${random.randrange(0, 1000)}",
+        '<$50,000',
+        '<$75,000',
+        "$100,000",
+        "$125,000",
+        "$150,000",
+        "$175,000",
+        "$200,000+",
+    ]
     location = ["Retard lives in his mom's basement LOL", "America", "United States", "Europe", "Poland", "Mexico",
                 "Russia", "Pakistan", "India",
                 "Some random third world country", "Canada", "Alabama", "Alaska", "Arizona", "Arkansas", "California",
@@ -688,9 +693,26 @@ async def hack(ctx, user: discord.User = None):
     phone = f'({random.randrange(0, 10)}{random.randrange(0, 10)}{random.randrange(0, 10)})-{random.randrange(0, 10)}{random.randrange(0, 10)}{random.randrange(0, 10)}-{random.randrange(0, 10)}{random.randrange(0, 10)}{random.randrange(0, 10)}{random.randrange(0, 10)}'
     if user is None:
         user = ctx.author
-        password = ['password', '123', 'mypasswordispassword', user.name + "iscool123", user.name + "isdaddy",
-                    "daddy" + user.name, "ilovediscord", "i<3discord", "furryporn456", "secret", "123456789", "apple49",
-                    "redskins32", "princess", "dragon", "password1", "1q2w3e4r", "ilovefurries"]
+        password = [
+            'password',
+            '123',
+            'mypasswordispassword',
+            f"{user.name}iscool123",
+            f"{user.name}isdaddy",
+            f"daddy{user.name}",
+            "ilovediscord",
+            "i<3discord",
+            "furryporn456",
+            "secret",
+            "123456789",
+            "apple49",
+            "redskins32",
+            "princess",
+            "dragon",
+            "password1",
+            "1q2w3e4r",
+            "ilovefurries",
+        ]
         message = await ctx.send(f"`Hacking {user}...\n`")
         await asyncio.sleep(1)
         await message.edit(content=f"`Hacking {user}...\nHacking into the mainframe...\n`")
@@ -709,9 +731,26 @@ async def hack(ctx, user: discord.User = None):
         await message.edit(
             content=f"```Successfully hacked {user}\nName: {random.choice(name)}\nGender: {random.choice(gender)}\nAge: {age}\nHeight: {random.choice(height)}\nWeight: {weight}\nHair Color: {random.choice(hair_color)}\nSkin Color: {random.choice(skin_color)}\nDOB: {dob}\nLocation: {random.choice(location)}\nPhone: {phone}\nE-Mail: {user.name + random.choice(email)}\nPasswords: {random.choices(password, k=3)}\nOccupation: {random.choice(occupation)}\nAnnual Salary: {random.choice(salary)}\nEthnicity: {random.choice(ethnicity)}\nReligion: {random.choice(religion)}\nSexuality: {random.choice(sexuality)}\nEducation: {random.choice(education)}```")
     else:
-        password = ['password', '123', 'mypasswordispassword', user.name + "iscool123", user.name + "isdaddy",
-                    "daddy" + user.name, "ilovediscord", "i<3discord", "furryporn456", "secret", "123456789", "apple49",
-                    "redskins32", "princess", "dragon", "password1", "1q2w3e4r", "ilovefurries"]
+        password = [
+            'password',
+            '123',
+            'mypasswordispassword',
+            f"{user.name}iscool123",
+            f"{user.name}isdaddy",
+            f"daddy{user.name}",
+            "ilovediscord",
+            "i<3discord",
+            "furryporn456",
+            "secret",
+            "123456789",
+            "apple49",
+            "redskins32",
+            "princess",
+            "dragon",
+            "password1",
+            "1q2w3e4r",
+            "ilovefurries",
+        ]
         message = await ctx.send(f"`Hacking {user}...\n`")
         await asyncio.sleep(1)
         await message.edit(content=f"`Hacking {user}...\nHacking into the mainframe...\n`")
@@ -742,9 +781,9 @@ async def token(ctx, user: discord.User = None):
     print(token)
     if user is None:
         user = ctx.author
-        await ctx.send(user.mention + "'s token is " + ''.join(token))
+        await ctx.send(f"{user.mention}'s token is " + ''.join(token))
     else:
-        await ctx.send(user.mention + "'s token is " + "".join(token))
+        await ctx.send(f"{user.mention}'s token is " + "".join(token))
 
 
 @bot.command()
@@ -825,9 +864,11 @@ async def webmails(ctx, *, text):
     await ctx.message.delete()
     await ctx.send("```Email Scrape initializing...```", delete_after=10)
     #await ctx.send(f"{text}")
-    os.system("cd src/tools/Infoga && python3 infoga.py --domain " + text + " --source all --breach -v 1 --report result.txt")
+    os.system(
+        f"cd src/tools/Infoga && python3 infoga.py --domain {text} --source all --breach -v 1 --report result.txt"
+    )
     time.sleep(2)
-    
+
     a_file = open("src/tools/Infoga/result.txt")
     file_contents = a_file.read()
     await ctx.send(f"```{file_contents}```")
@@ -837,9 +878,11 @@ async def pwnd(ctx, *, text):
     await ctx.message.delete()
     await ctx.send("```Email Osint initializing...```", delete_after=10)
     #await ctx.send(f"{text}")
-    os.system("cd src/tools/Infoga && python3 infoga.py --info " + text + " -v 3 --report result.txt")
+    os.system(
+        f"cd src/tools/Infoga && python3 infoga.py --info {text} -v 3 --report result.txt"
+    )
     time.sleep(2)
-    
+
     a_file = open("src/tools/Infoga/result.txt")
     file_contents = a_file.read()
     await ctx.send(f"```{file_contents}```")
@@ -850,9 +893,9 @@ async def nmap(ctx, *, text):
     await ctx.message.delete()
     await ctx.send("```Nmap initializing...```", delete_after=10)
     #await ctx.send(f"{text}")
-    os.system("nmap " + text + "> result.txt")
+    os.system(f"nmap {text}> result.txt")
     time.sleep(2)
-    
+
     a_file = open("result.txt")
     file_contents = a_file.read()
     await ctx.send(f"```{file_contents}```")
@@ -862,9 +905,9 @@ async def emused(ctx, *, text):
     await ctx.message.delete()
     await ctx.send("```Email Search initializing...```", delete_after=10)
     #await ctx.send(f"{text}")
-    os.system("holehe --only-used " + text + "> result.txt")
+    os.system(f"holehe --only-used {text}> result.txt")
     time.sleep(2)
-    
+
     a_file = open("result.txt")
     file_contents = a_file.read()
     await ctx.send(f"```{file_contents}```")
@@ -874,9 +917,11 @@ async def githunt(ctx, *, text):
     await ctx.message.delete()
     await ctx.send("```Github Scrape initializing...```", delete_after=10)
     #await ctx.send(f"{text}")
-    os.system("cd src/tools/gitrecon && python3 gitrecon.py -s github " + text + " > result.txt")
+    os.system(
+        f"cd src/tools/gitrecon && python3 gitrecon.py -s github {text} > result.txt"
+    )
     time.sleep(2)
-    
+
     a_file = open("src/tools/gitrecon/result.txt")
     file_contents = a_file.read()
     await ctx.send(f"```{file_contents}```")
@@ -886,9 +931,11 @@ async def AdvIP(ctx, *, text):
     await ctx.message.delete()
     await ctx.send("```Advanced IP Lookup initializing...```", delete_after=10)
     #await ctx.send(f"{text}")
-    os.system("cd src/tools/geo-recon && python3 geo-recon.py " + text + " > result.txt")
+    os.system(
+        f"cd src/tools/geo-recon && python3 geo-recon.py {text} > result.txt"
+    )
     time.sleep(2)
-    
+
     a_file = open("src/tools/geo-recon/result.txt")
     file_contents = a_file.read()
     await ctx.send(f"```{file_contents}```")
@@ -900,39 +947,41 @@ async def AdvIP(ctx, *, text):
 
 @bot.command(aliases=['Usersearch'])
 async def usersearch(ctx, *, text):
-        await ctx.message.delete()
-        await ctx.send("""```
+    await ctx.message.delete()
+    await ctx.send("""```
 Username Search initializing...
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Please wait this could take about 5 minutes.```""", delete_after=10)
-        #await ctx.send(f"{text}")
+    #await ctx.send(f"{text}")
 
-        msg = await bot.wait_for("message", check=check)
-        await ctx.send(f"***{msg.author}*** ```Please wait a special command is initializing...```", delete_after=10)
-    
-        os.system("cd src/tools/maigret && python3 maigret.py " + text + "> result.txt")
-        time.sleep(2)
+    msg = await bot.wait_for("message", check=check)
+    await ctx.send(f"***{msg.author}*** ```Please wait a special command is initializing...```", delete_after=10)
 
-        await ctx.send(file=discord.File("src/tools/maigret/result.txt"))
-        time.sleep(2)
+    os.system(f"cd src/tools/maigret && python3 maigret.py {text}> result.txt")
+    time.sleep(2)
+
+    await ctx.send(file=discord.File("src/tools/maigret/result.txt"))
+    time.sleep(2)
         
 @bot.command(aliases=['deepweb', 'Deep', 'DeepWeb', 'Deepweb'])
 async def deep(ctx, *, text):
-        await ctx.message.delete()
-        await ctx.send("""```
+    await ctx.message.delete()
+    await ctx.send("""```
 DeepWeb Search initializing...
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Please wait this could take about 5 minutes.```""", delete_after=10)
-        #await ctx.send(f"{text}")
+    #await ctx.send(f"{text}")
 
-        msg = await bot.wait_for("message", check=check)
-        await ctx.send(f"***{msg.author}*** ```Please wait a special command is initializing...```", delete_after=10)
-    
-        os.system("cd src/tools/thedevilseye && python3 eye -q " + text + "> deepwebsearch.txt")
-        time.sleep(2)
+    msg = await bot.wait_for("message", check=check)
+    await ctx.send(f"***{msg.author}*** ```Please wait a special command is initializing...```", delete_after=10)
 
-        await ctx.send(file=discord.File("src/tools/thedevilseye/deepwebsearch.txt"))
-        time.sleep(2)
+    os.system(
+        f"cd src/tools/thedevilseye && python3 eye -q {text}> deepwebsearch.txt"
+    )
+    time.sleep(2)
+
+    await ctx.send(file=discord.File("src/tools/thedevilseye/deepwebsearch.txt"))
+    time.sleep(2)
         
 
 

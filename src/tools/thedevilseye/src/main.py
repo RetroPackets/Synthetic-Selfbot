@@ -12,9 +12,9 @@ from lib.colors import red,white,green,reset
 class thedevilseye:
     def __init__(self,args,start_time):
         if args.update:
-        	self.update()
+            self.update()
         elif args.jailbait:
-        	self.uri = f'https://ahmia.fi/search/?q=jailbait'
+            self.uri = 'https://ahmia.fi/search/?q=jailbait'
         elif args.i2p:
             self.uri = f'https://ahmia.fi/search/i2p/?q={args.query}'
         elif args.licence:
